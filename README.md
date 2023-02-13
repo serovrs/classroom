@@ -138,4 +138,13 @@ EndSection
 
 samba-usershares, kf5-kio, samba, kde5-network-filesharing
 
+Проверьте, работает ли он:
+
+sudo systemctl status smb.service
+если нет, то запустите и включите его:
+
+sudo systemctl enable --now smb.service
+… то же самое для nmb.service
+
+
 
