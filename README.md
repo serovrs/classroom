@@ -1,24 +1,29 @@
 # classroom
 Выполнение одной или нескольких команд на группе компьютеров через SSH:
 
+```
 for i in `seq 13 17`; do ssh root@192.168.0.$i 'reboot'; done
-
+```
 Пример, обновление системы, установка Pov-Ray. Передаются параметры – enable-upgrade (разрешить обновление системы) и -y (согласится с установкой необходимых пакетов):
+
+```
 for i in `seq 3 17`; do ssh root@192.168.0.$i 'apt-get update && apt-get upgrade --enable-upgrade -y && apt-get install povray -y'; done
-
+```
 Та же команда, вместо IP адреса имя сервера:
+
+```
 for i in `seq 1 15`; do ssh root@student-$i.local 'apt-get update && apt-get upgrade --enable-upgrade -y && apt-get autoclean'; done
-
-
+```
 Скачать и установить PyCharm Community:
+
+```
 for i in `seq 1 15`; do ssh root@student-$i.local 'epm play pycharm'; done
-
-for i in `seq 1 15`; do ssh user@student-$i.local 'cd /opt/pycharm-*/bin && sh pycharm.sh'; done
-
+```
 Установка среды разработки программного обеспечения (Geany):
 
+```
 apt-get install -y geany geany-plugins geany-plugins-common
-
+```
 Установка виртуального принтера Boomaga (поиск замены Bullzip PDF Printer):
 
 apt-get install boomaga
